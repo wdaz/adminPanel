@@ -12,11 +12,10 @@ import { EditModalComponent } from '../modal/edit-modal/edit-modal.component';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
-export class ContentComponent implements OnInit, OnDestroy {
+export class ContentComponent implements OnInit {
 
   public headers: Array<string>;
   public contact: Array<Contact>;
-  private event: Subscription;
 
   constructor(
     private adminCrudService: AdminCrudService,
@@ -28,9 +27,6 @@ export class ContentComponent implements OnInit, OnDestroy {
     config.keyboard = false;
   }
 
-  ngOnDestroy(): void {
-    this.event.unsubscribe()
-  }
 
   ngOnInit(): void {
     this.getUsers();

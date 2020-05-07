@@ -50,7 +50,7 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('user');
     this.currentUserSubject.next(null);
-    this.router.navigate(['/singin']);
+    this.router.navigate(['singin']);
  }
 
 
