@@ -1,0 +1,49 @@
+<div class="px-5 py-5 main">
+  <div class="py-4 px-2">
+    <a (click)="add()">
+      <i class="fas fa-plus-circle text-success"></i>
+    </a>
+  </div>
+  <div class="content w-100  pr-md-3 pr-sm-1 pl-5 py-4">
+    <div class="table-responsive">
+      <div class="table pr-4">
+        <div class="table-head d-none d-md-block">
+          <div class="d-flex text-center pb-1">
+            <div class="row w-100">
+              <div class="col-2 pb-2 font-weight-bold text-capitalize" *ngFor="let item of headers">
+                {{item}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="d-flex table-hover text-md-center pt-1 pb-1" *ngFor="let item of contact">
+            <div class="row w-100 mb-sm-2">
+              <div class="col-md-2 tr">
+                {{item.firstname}}
+              </div>
+              <div class="col-md-2 tr">
+                {{item.lastname}}
+              </div>
+              <div class="col-md-2 tr">
+                {{item.email}}
+              </div>
+              <div class="col-md-2 tr">
+                {{item.country}}
+              </div>
+              <div class="col-md-2 tr">
+                {{item.phoneNumber}}
+              </div>
+              <div class="col-md-2 tr">
+                <div class="d-flex  justify-content-around">
+                  <a (click)="edit(item)" class="text-warning mr-sm-5"><i class="fas fa-pen"></i></a>
+                  <a (click)="delete(item._id)" class="text-danger"><i class="fas fa-times"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

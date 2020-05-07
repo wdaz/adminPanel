@@ -1,0 +1,17 @@
+.log-out {
+  color: white;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: rgba(221, 212, 212, 0.746);
+  }
+}
+
+.navbar {
+  box-shadow: 0 1px 2px 1px #3e7ec3b8;
+
+  &-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+}

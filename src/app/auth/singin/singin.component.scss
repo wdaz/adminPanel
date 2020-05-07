@@ -1,0 +1,53 @@
+@import '../../../assets/scss/colors/colors.scss';
+
+.singin-box {
+  width: 320px;
+  height: 380px;
+  padding: 4rem 2rem;
+  background-color: white;
+  color: #53585e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px 0 #c4c8d066;
+  box-sizing: border-box;
+
+  .icon-box {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: $dodger-blue;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    $a: 50px;
+    left: unquote("-webkit-calc(50% - 50px)");
+
+    .fas {
+      font-size: 3rem;
+      color: white;
+    }
+
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 3rem;
+  }
+
+  button {
+    height: 2.5rem;
+    font-size: 1.5rem;
+    border: none;
+    font-weight: bold;
+    outline: none;
+    background-color: $dodger-blue;
+    color: white;
+    border-radius: 20px;
+  }
+
+
+}

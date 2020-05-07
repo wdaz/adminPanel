@@ -1,0 +1,28 @@
+$base-color: #0D223F;
+$second-color: red;
+
+.base-btn {
+    color: white;
+    border: none;
+    height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+  }
+  
+
+  .create {
+    background-color: $base-color;  
+  }
+  
+  .disable {
+    background-color: #0d223fc7;
+  }
+  .cancel {
+    background-color: $second-color;
+  }
+  

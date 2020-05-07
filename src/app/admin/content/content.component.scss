@@ -1,0 +1,74 @@
+@import '../../../assets/scss/colors/colors.scss';
+
+.main {
+  height: unquote("-webkit-calc(100vh - 65px)");
+
+  .fas {
+    font-size: 1rem;
+  }
+
+  .fa-plus-circle {
+    font-size: 2rem;
+  }
+
+  .content {
+    background: white;
+    height: 65vh;
+    overflow: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 0 #c4c8d066;
+  }
+}
+
+.row {
+  border-bottom: 1px solid $pale-grey;
+}
+
+.table {
+  overflow: auto;
+}
+
+
+@media(max-width:768px) {
+
+  .content {
+    background: transparent;
+    overflow: auto;
+    border-radius: none;
+    box-shadow: none;
+  }
+
+  .tr {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tr::before {
+    font-weight: bold;
+  }
+
+
+  .tr:first-child::before {
+    content: 'Firstname';
+  }
+
+  .tr:nth-child(2)::before {
+    content: 'Lastname';
+  }
+
+  .tr:nth-child(3)::before {
+    content: 'Email';
+  }
+
+  .tr:nth-child(4)::before {
+    content: 'Country';
+  }
+
+  .tr:nth-child(5)::before {
+    content: 'Phone Number';
+  }
+
+  .tr:last-child::before {
+    content: 'Edit / Delete';
+  }
+}

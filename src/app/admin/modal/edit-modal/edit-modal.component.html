@@ -1,0 +1,47 @@
+<div class="modal-body" *ngIf="contact">
+    <form [formGroup]="addForm" (ngSubmit)="edit()" class="col">
+      <div>
+        <div class="row">
+          <div class="form-group col">
+            <label>FirstName</label><sup>*</sup>
+            <input type="text" formControlName="firstname"  [ngClass]="{'has-error': !f.get('firstname').valid}" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label>Lastname</label><sup>*</sup>
+            <input type="text" formControlName="lastname"  [ngClass]="{'has-error': !f.get('lastname').valid}" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label>Email</label><sup>*</sup>
+            <input type="email" formControlName="email"  [ngClass]="{'has-error': !f.get('email').valid}" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label>Country</label><sup>*</sup>
+            <input type="text" formControlName="country"  [ngClass]="{'has-error': !f.get('country').valid}" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label>Phone Number</label><sup>*</sup>
+            <input type="text" formControlName="phoneNumber"  [ngClass]="{'has-error': !f.get('phoneNumber').valid}" class="form-control">
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-6">
+            <button type="submit" class="w-100 base-btn" [ngClass]="f.valid ? 'create': 'disable'">Update</button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="w-100 cancel base-btn" (click)="activeModal.close('Close click')">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
