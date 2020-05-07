@@ -12,13 +12,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SinginComponent implements OnInit {
 
   public singInForm: FormGroup;
-
+  public reg: Boolean;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private activeRouter: ActivatedRoute,
     private router: Router,
-  ) { }
+  ) {
+    this.reg = false;
+  }
 
   ngOnInit(): void {
     this.createForm();
@@ -36,15 +38,25 @@ export class SinginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.f.valid) 
-    this.authService.singIn(this.f.value)
-    .pipe(first()).subscribe(ok => {
-      if (this.activeRouter.snapshot.queryParams.url) {
-         return this.router.navigate([this.activeRouter.snapshot.queryParams.url]);
-      }
-      this.router.navigate(['dashboard']);
-   },
-   err=>console.log(err)
-   );
+    if (this.f.valid)
+      this.authService.singIn(this.f.value)
+        .pipe(first()).subscribe(ok => {
+          if (this.activeRouter.snapshot.queryParams.url) {
+            return this.router.navigate([this.activeRouter.snapshot.queryParams.url]);
+          }
+          this.router.navigate(['dashboard']);
+        },
+          err => console.log(err)
+        );
+  }
+
+  singUp() {
+    if (this.f.valid)
+      this.authService.singUp(this.f.value)
+        .pipe(first()).subscribe(ok => {
+          this.reg = true;
+        },
+          err => console.log(err)
+        );
   }
 }
